@@ -13,7 +13,6 @@
  indent-tabs-mode nil
  mouse-yank-at-point t
  scroll-preserve-screen-position 'always
- show-trailing-whitespace t
  )
 
 (global-auto-revert-mode)
@@ -34,6 +33,10 @@
                 twittering-mode-hook
                 minibuffer-setup-hook))
   (add-hook hook #'sanityinc/no-trailing-whitespace))
+
+(setq whitespace-style
+      '(tabs spaces trailing space-before-tab
+             newline indentation empty space-after-tab space-mark tab-mark newline-mark))
 
 
 (require-package 'undo-tree)
@@ -66,8 +69,6 @@
 (global-set-key (kbd "C->") 'mc/mark-next-like-this)
 (global-set-key (kbd "C-+") 'mc/mark-next-like-this)
 (global-set-key (kbd "C-c C-<") 'mc/mark-all-like-this)
-
-(require-package 'guide-key)
 
 ;;----------------------------------------------------------------------------
 ;; Fill column indicator
@@ -113,7 +114,9 @@
 (hes-mode)
 
 (require-package 'guide-key)
-(setq guide-key/guide-key-sequence '("C-x" "C-c" "C-x 4" "C-x 5" "C-c ;" "C-c ; f" "C-c ' f" "C-x n"))
+(setq guide-key/guide-key-sequence '("C-x" "C-c" "C-x 4" "C-x 5"
+                                     "C-c ;" "C-c ; f" "C-c ' f"
+                                     "C-x n" "C-c p"))
 (guide-key-mode 1)
 (diminish 'guide-key-mode)
 
