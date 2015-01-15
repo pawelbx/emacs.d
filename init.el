@@ -17,12 +17,13 @@
 (require 'init-isearch)
 (require 'init-helm)
 (require 'init-elfeed)
+(require 'init-winner)
 
 (setq-default tab-width 2)
 (ample-theme)
 
 (global-hl-line-mode 1)
-(set-face-background 'hl-line "#27242E")
+(set-face-background 'hl-line "#302942")
 (fset 'yes-or-no-p 'y-or-n-p)
 
 (winner-mode 1)
