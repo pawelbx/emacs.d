@@ -19,6 +19,9 @@
 (require 'init-elfeed)
 (require 'init-winner)
 
+(setq-default gc-cons-threshold 100000000
+              gc-cons-percentage 0.5)
+
 (setq-default tab-width 2)
 (ample-theme)
 
@@ -40,11 +43,6 @@
 (defalias 'list-buffers 'ibuffer)
 
 (put 'dired-find-alternate-file 'disabled nil)
-
-(require 'projectile)
-(projectile-global-mode t)
-(setq projectile-remember-window-configs t)
-(helm-projectile-on)
 
 (require 'yasnippet)
 (yas-global-mode 1)
