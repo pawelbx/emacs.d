@@ -18,6 +18,7 @@
 (require 'init-helm)
 (require 'init-elfeed)
 (require 'init-winner)
+(require 'init-projectile)
 
 (setq-default gc-cons-threshold 100000000
               gc-cons-percentage 0.5)
