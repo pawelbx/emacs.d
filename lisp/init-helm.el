@@ -1,5 +1,8 @@
 (require-package 'helm)
+(require-package 'helm-ag)
+
 (require 'helm-config)
+(helm-mode 1)
 (global-set-key (kbd "C-c h") 'helm-command-prefix)
 (global-unset-key (kbd "C-x c"))
 
@@ -26,7 +29,5 @@
       helm-ff-search-library-in-sexp        t ; search for library in `require' and `declare-function' sexp.
       helm-scroll-amount                    8 ; scroll 8 lines other window using M-<next>/M-<prior>
       helm-ff-file-name-history-use-recentf t)
-
-(helm-mode 1)
 
 (provide 'init-helm)
