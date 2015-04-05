@@ -6,7 +6,6 @@
 (setq elfeed-feeds
       '(("http://twitrss.me/twitter_user_to_rss/?user=%40jwiegley" twitter dev)
         ("http://ejohn.org/category/blog/feed/" dev js)
-        ("http://feeds.feedburner.com/hn100points" news)
         ("http://feeds.feedburner.com/nczonline" dev js)
         ("http://feeds.feedburner.com/dailyjs" dev js)
         ("http://blog.binchen.org/rss.xml" dev emacs)
