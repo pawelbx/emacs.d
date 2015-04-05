@@ -1,12 +1,15 @@
 (winner-mode 1)
 
-(add-to-list 'winner-boring-buffers "*helm M-x*")
-(add-to-list 'winner-boring-buffers "*helm mini*")
-(add-to-list 'winner-boring-buffers "*Helm Completions*")
-(add-to-list 'winner-boring-buffers "*Helm Find Files*")
-(add-to-list 'winner-boring-buffers "*helm mu*")
-(add-to-list 'winner-boring-buffers "*helm mu contacts*")
-(add-to-list 'winner-boring-buffers "*helm-mode-describe-variable*")
-(add-to-list 'winner-boring-buffers "*helm-mode-describe-function*")
+(dolist (boring-buffer'("*helm M-x*"
+                        "*helm mini*"
+                        "*Helm Completions*"
+                        "*Helm Find Files*"
+                        "*helm mu*"
+                        "*helm mu contacts*"
+                        "*helm-mode-describe-variable*"
+                        "*helm-mode-describe-function*"
+                        "*helm projectile*"
+                        "*helm grep*"))
+  (add-to-list 'winner-boring-buffers boring-buffer))
 
 (provide 'init-winner)
