@@ -20,6 +20,7 @@
 (require 'init-winner)
 (require 'init-projectile)
 (require 'init-ruby)
+(require 'init-org)
 
 (setq-default gc-cons-threshold 100000000
               gc-cons-percentage 0.5)
