@@ -20,24 +20,9 @@
       auto-revert-verbose nil)
 
 ;;Whitespace
-(defun sanityinc/no-trailing-whitespace ()
-  "Turn off display of trailing whitespace in this buffer."
-  (setq show-trailing-whitespace nil))
-
-;; But don't show trailing whitespace in SQLi, inf-ruby etc.
-(dolist (hook '(special-mode-hook
-                eww-mode-hook
-                term-mode-hook
-                comint-mode-hook
-                compilation-mode-hook
-                twittering-mode-hook
-                minibuffer-setup-hook))
-  (add-hook hook #'sanityinc/no-trailing-whitespace))
-
 (setq whitespace-style
       '(tabs spaces trailing space-before-tab
              newline indentation empty space-after-tab space-mark tab-mark newline-mark))
-
 
 (require-package 'undo-tree)
 (global-undo-tree-mode)
@@ -46,7 +31,9 @@
 
 (dolist (hook '(prog-mode-hook html-mode-hook css-mode-hook))
   (add-hook hook 'highlight-symbol-mode)
-  (add-hook hook 'highlight-symbol-nav-mode))
+  (add-hook hook 'highlight-symbol-nav-mode)
+  (add-hook hook 'whitespace-mode 1))
+
 (eval-after-load 'highlight-symbol
   '(diminish 'highlight-symbol-mode))
 
@@ -74,11 +61,6 @@
 ;; Fill column indicator
 ;;----------------------------------------------------------------------------
 (require-package 'fill-column-indicator)
-(defun sanityinc/prog-mode-fci-settings ()
-  (turn-on-fci-mode)
-  (when show-trailing-whitespace
-    (set (make-local-variable 'whitespace-style) '(face trailing))
-    (whitespace-mode 1)))
 
 (defun sanityinc/fci-enabled-p ()
   (and (boundp 'fci-mode) fci-mode))
