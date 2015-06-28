@@ -22,4 +22,6 @@
                    (abbreviate-file-name (buffer-file-name))
                  "%b"))))
 
+(setq display-time-day-and-date t)
+(display-time)
 (provide 'init-gui-frames)
