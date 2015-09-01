@@ -26,4 +26,6 @@
 (after-load 'flyspell
   (add-to-list 'flyspell-prog-text-faces 'nxml-text-face))
 
+(add-hook 'org-mode-hook 'turn-on-flyspell)
+
 (provide 'init-flyspell)
