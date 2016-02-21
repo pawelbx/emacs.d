@@ -32,10 +32,10 @@ locate PACKAGE."
 (setq package-enable-at-startup nil)
 (package-initialize)
 
-(require-package 'fullframe)
-(fullframe list-packages quit-window)
-
 (require-package 'cl-lib)
 (require 'cl-lib)
+
+(require-package 'fullframe)
+(fullframe list-packages quit-window)
 
 (provide 'init-elpa)

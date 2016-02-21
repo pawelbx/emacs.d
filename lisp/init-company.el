@@ -7,6 +7,7 @@
 (eval-after-load 'company
   '(progn
      (company-statistics-mode)
+     (setq company-statistics-size 40000)
      ;; can't work with TRAMP
      (setq company-backends (delete 'company-ropemacs company-backends))
      ;; I don't like the downcase word in company-dabbrev
