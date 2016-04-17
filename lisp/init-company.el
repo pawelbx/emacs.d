@@ -20,6 +20,6 @@
 
      (setq company-global-modes
            '(not
-             eshell-mode comint-mode erc-mode gud-mode rcirc-mode))))
+             eshell-mode comint-mode erc-mode gud-mode rcirc-mode haskell-mode))))
 
 (provide 'init-company)
