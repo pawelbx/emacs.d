@@ -27,4 +27,10 @@
 
 (add-hook 'org-mode-hook 'org-mode-hook-setup)
 
+(org-babel-do-load-languages
+ 'org-babel-load-languages
+ '((haskell . t)
+   (emacs-lisp . t)
+   (ruby . t)))
+
 (provide 'init-org)
