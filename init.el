@@ -34,6 +34,7 @@
 (global-hl-line-mode 1)
 ;(set-face-background 'hl-line "#302942")
 (fset 'yes-or-no-p 'y-or-n-p)
+(desktop-save-mode 1)
 
 (global-set-key (kbd "C-c c") 'ediff-regions-wordwise)
 (global-set-key (kbd "M-s") 'other-window)
