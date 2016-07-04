@@ -24,6 +24,7 @@
 (require 'init-ag)
 (require 'init-javascript)
 (require 'init-haskell)
+(require 'init-go)
 
 (setq-default gc-cons-threshold 100000000
               gc-cons-percentage 0.5)
