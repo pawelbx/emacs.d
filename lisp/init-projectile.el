@@ -1,4 +1,5 @@
 (require-package 'projectile)
+(require-package 'helm-projectile)
 
 (projectile-global-mode t)
 (setq projectile-remember-window-configs t)

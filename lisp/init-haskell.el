@@ -1,3 +1,5 @@
+(require-package 'haskell-mode)
+
 (require 'haskell)
 (require 'haskell-mode)
 (require 'haskell-interactive-mode)

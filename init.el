@@ -30,7 +30,9 @@
               gc-cons-percentage 0.5)
 
 (setq-default tab-width 2)
+(require-package 'solarized-theme)
 (load-theme 'solarized-light t)
+(require-package 'smart-mode-line)
 (smart-mode-line-enable)
 (global-hl-line-mode 1)
 ;(set-face-background 'hl-line "#302942")
@@ -54,9 +56,11 @@
 
 (put 'dired-find-alternate-file 'disabled nil)
 
+(require-package 'yasnippet)
 (require 'yasnippet)
 (yas-global-mode 1)
 
+(require-package 'visual-regexp)
 (require 'visual-regexp)
 
 (setq custom-file (concat user-emacs-directory "customs.el"))
@@ -67,3 +71,5 @@
 (put 'upcase-region 'disabled nil)
 (put 'downcase-region 'disabled nil)
 (put 'narrow-to-region 'disabled nil)
+
+(provide 'init)
