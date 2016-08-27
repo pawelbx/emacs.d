@@ -24,6 +24,7 @@
     ("#49483E" . 100)))
  '(magit-diff-use-overlays nil)
  '(magit-use-overlays nil)
+ '(org-agenda-files (quote ("~/text/life.org")))
  '(vc-annotate-background nil)
  '(vc-annotate-color-map
    (quote
