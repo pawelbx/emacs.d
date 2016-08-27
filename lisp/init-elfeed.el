@@ -13,6 +13,7 @@
         ("http://sachachua.com/blog/feed/" productivity emacs)
         ("http://feeds.feedburner.com/html5rocks" html5)
         ("http://feeds.feedburner.com/Truthdig/ChrisHedges" politics)
-        ("https://blog.nader.org/feed/" politics)))
+        ("https://blog.nader.org/feed/" politics)
+        ("http://www1.cs.columbia.edu/~unger/myBlog/rssFeed.xml")))
 
 (provide 'init-elfeed)
