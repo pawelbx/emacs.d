@@ -2,7 +2,7 @@
 (global-set-key (kbd "C-c o") 'org-capture)
 
 (setq org-agenda-file-regexp "\\`todo\\.org\\'")
-(setq org-agenda-files '("~/text/life.org" "~/text/work.org"))
+(setq org-agenda-files '("~/text/life.org" "~/text/work/work.org" "~/text/work/notes.org"))
 (setq org-log-done 'time)
 (setq org-startup-indented 1)
 
@@ -12,7 +12,7 @@
 (setq org-capture-templates
       '(("m" "entry for meditation journal" entry (file "~/text/personal/meditation/journal.org")
          "\n* %u\n :PROPERTIES:\n :TIME: %? minutes\n :END:\n** Notes\n - ")
-        ("n" "entry for thoughts" entry (file+headline "~/text/thoughts.org" "Inbox")
+        ("n" "entry for thoughts" entry (file+headline "~/text/notes.org" "Inbox")
          "** %u\n - %?")
         ("l" "entry for life todo list" entry (file+headline "~/text/life.org" "Inbox")
          "\n* TODO %?")
