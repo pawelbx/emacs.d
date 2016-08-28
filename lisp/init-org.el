@@ -12,11 +12,13 @@
 (setq org-capture-templates
       '(("m" "entry for meditation journal" entry (file "~/text/personal/meditation/journal.org")
          "\n* %u\n :PROPERTIES:\n :TIME: %? minutes\n :END:\n** Notes\n - ")
-        ("n" "entry for thoughts" entry (file+headline "~/text/notes.org" "Inbox")
-         "** %u\n - %?")
-        ("l" "entry for life todo list" entry (file+headline "~/text/life.org" "Inbox")
+        ("n" "daily work log" entry (file+datetree "~/text/work/daily-log.org")
+         "* %U - %?")
+        ("o" "daily life log" entry (file+datetree "~/text/personal/daily-log.org")
+         "* %U - %?")
+        ("l" "entry for life todo list" entry (file+headline "~/text/personal/life.org" "Inbox")
          "\n* TODO %?")
-        ("w" "entry for work todo list" entry (file+headline "~/text/work.org" "Inbox")
+        ("w" "entry for work todo list" entry (file+headline "~/text/personal/work.org" "Inbox")
          "** TODO %?")
         ))
 
