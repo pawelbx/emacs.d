@@ -1,5 +1,6 @@
 (require-package 'magit)
 (require-package 'git-gutter)
+(require-package 'git-timemachine)
 
 (global-git-gutter-mode t)
 (git-gutter:linum-setup)
