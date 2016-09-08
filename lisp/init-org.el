@@ -18,7 +18,7 @@
          "* %U - %?")
         ("l" "entry for life todo list" entry (file+headline "~/text/personal/life.org" "Inbox")
          "\n* TODO %?")
-        ("w" "entry for work todo list" entry (file+headline "~/text/personal/work.org" "Inbox")
+        ("w" "entry for work todo list" entry (file+headline "~/text/work/work.org" "Inbox")
          "** TODO %?")
         ))
 
