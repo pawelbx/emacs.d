@@ -1,4 +1,5 @@
 (require-package 'haskell-mode)
+(require-package 'intero)
 
 (require 'haskell)
 (require 'haskell-mode)
@@ -15,5 +16,7 @@
     (define-key haskell-mode-map (kbd "C-c C-i") 'haskell-process-do-info)
     (define-key haskell-mode-map (kbd "C-c M-.") nil)
     (define-key haskell-mode-map (kbd "C-c C-d") nil)))
+
+
 
 (provide 'init-haskell)
