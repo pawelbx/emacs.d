@@ -102,4 +102,12 @@
 (guide-key-mode 1)
 (diminish 'guide-key-mode)
 
+
+(defun find-file-sudo ()
+  "Reopen the current file as root, preserving point position."
+  (interactive)
+  (let ((p (point)))
+    (find-alternate-file (concat "/sudo:root@localhost:" buffer-file-name))
+    (goto-char p)))
+
 (provide 'init-editing-utils)
