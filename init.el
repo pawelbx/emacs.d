@@ -34,6 +34,7 @@
 (require 'init-go)
 (require 'init-dired)
 (require 'init-other)
+(require 'init-erc)
 
 (setq-default gc-cons-threshold 100000000
               gc-cons-percentage 0.5)
