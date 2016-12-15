@@ -5,7 +5,8 @@
                                      "#emacs"
                                      "#emacs-ops"
                                      "#postgresql"
-                                     "#sql"))
+                                     "#sql
+                                      ##networking"))
  erc-server "irc.freenode.net"
  erc-nick "pawelbx")
 
