@@ -1,10 +1,12 @@
 *.elc
 *~
 session.*
-company-statistics-cachel.el
+company-statistics-cache.el
 .emacs.desktop
 .emacs.desktop.lock
 /auto-save-list/
 /elpa/
 /eshell/
 /url/
+recentf
+
