@@ -1,4 +1,10 @@
-*
-!.gitignore
-!*.el
-!*/
+*.elc
+*~
+session.*
+company-statistics-cachel.el
+.emacs.desktop
+.emacs.desktop.lock
+/auto-save-list/
+/elpa/
+/eshell/
+/url/
