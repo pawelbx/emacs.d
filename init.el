@@ -36,6 +36,7 @@
 (require 'init-dired)
 (require 'init-other)
 (require 'init-erc)
+(require 'init-web)
 (require 'custom-funcs)
 
 (setq-default gc-cons-threshold 100000000
