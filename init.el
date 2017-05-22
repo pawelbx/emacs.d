@@ -11,6 +11,7 @@
 (require 'init-elpa)
 
 (require-package 'diminish)
+(require-package 'f)
 
 (require 'init-gui-frames)
 (require 'init-uniquify)
@@ -35,6 +36,7 @@
 (require 'init-dired)
 (require 'init-other)
 (require 'init-erc)
+(require 'custom-funcs)
 
 (setq-default gc-cons-threshold 100000000
               gc-cons-percentage 0.5)
