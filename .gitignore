@@ -5,7 +5,7 @@ company-statistics-cache.el
 .emacs.desktop
 .emacs.desktop.lock
 /auto-save-list/
-/elpa/
+/elpa/**
 /eshell/
 /url/
 recentf
