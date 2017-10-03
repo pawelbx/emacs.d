@@ -46,7 +46,7 @@
 (defun build-dcr ()
   "build dcr and copies it to bi-api"
   (interactive)
-  (async-shell-command "(cd /home/pbokota/projects/dcr/bin/ && bundle exec export-data-points)")
+  (shell-command "(cd /home/pbokota/projects/dcr/bin/ && bundle exec export-data-points)")
   (copy-file "/home/pbokota/projects/dcr/data-points.csv" "/home/pbokota/projects/lfm-bi-api/bi-api/data-points.csv" t))
 
 (provide 'custom-funcs)
