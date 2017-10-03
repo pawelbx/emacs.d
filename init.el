@@ -43,9 +43,9 @@
               gc-cons-percentage 0.5)
 
 (setq-default tab-width 2)
-(setq js-indent-level 2)
+
 (require-package 'solarized-theme)
-(load-theme 'solarized-light t)
+(load-theme 'solarized-dark t)
 (require-package 'smart-mode-line)
 (smart-mode-line-enable)
 (global-hl-line-mode 1)
