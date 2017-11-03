@@ -1,4 +1,3 @@
-
 ;; Added by Package.el.  This must come before configurations of
 ;; installed packages.  Don't delete this line.  If you don't want it,
 ;; just comment it out by adding a semicolon to the start of the line.
@@ -37,6 +36,7 @@
 (require 'init-other)
 (require 'init-erc)
 (require 'init-web)
+(require 'init-hydra)
 (require 'custom-funcs)
 
 (setq-default gc-cons-threshold 100000000
