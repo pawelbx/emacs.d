@@ -2,7 +2,7 @@
 (global-set-key (kbd "C-c o") 'org-capture)
 
 (setq org-agenda-file-regexp "\\`todo\\.org\\'")
-(setq org-agenda-files '("~/text/life.org" "~/text/work/work.org" "~/text/work/notes.org"))
+(setq org-agenda-files '("~/text/personal/life.org" "~/text/work/work.org"))
 (setq org-log-done 'time)
 (setq org-startup-indented 1)
 
@@ -14,7 +14,7 @@
          "\n* %u\n :PROPERTIES:\n :TIME: %? minutes\n :END:\n** Notes\n - ")
         ("n" "daily work log" entry (file+datetree "~/text/work/daily-log.org")
          "* %U - %?")
-        ("o" "daily life log" entry (file+datetree "~/text/personal/daily-log.org")
+        ("o" "daily life log" entry (file+datetree "~/text/personal/daily-life.org")
          "* %U - %?")
         ("l" "entry for life todo list" entry (file+headline "~/text/personal/life.org" "Inbox")
          "\n* TODO %?")
