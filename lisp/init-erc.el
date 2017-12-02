@@ -10,4 +10,6 @@
  erc-server "irc.freenode.net"
  erc-nick "pawelbx")
 
+(erc-spelling-mode 1)
+
 (provide 'init-erc)
