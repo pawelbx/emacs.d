@@ -45,6 +45,7 @@
 
 (setq-default tab-width 2)
 
+(require-package 'gist)
 (require-package 'solarized-theme)
 (load-theme 'solarized-dark t)
 (require-package 'smart-mode-line)
