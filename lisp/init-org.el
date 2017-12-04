@@ -1,8 +1,8 @@
 (global-set-key (kbd "C-c a") 'org-agenda)
 (global-set-key (kbd "C-c o") 'org-capture)
 
-(setq org-agenda-file-regexp "\\`todo\\.org\\'")
-(setq org-agenda-files '("~/text/personal/life.org" "~/text/work/work.org"))
+(setq org-agenda-file-regexp "\\`[^.].*\\.org\\'")
+ (setq org-agenda-files (f-directories "~/text"))
 (setq org-log-done 'time)
 (setq org-startup-indented 1)
 

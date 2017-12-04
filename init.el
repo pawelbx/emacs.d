@@ -11,6 +11,7 @@
 
 (require-package 'diminish)
 (require-package 'f)
+(require 'f)
 
 (require 'init-gui-frames)
 (require 'init-uniquify)

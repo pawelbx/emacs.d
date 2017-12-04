@@ -43,10 +43,9 @@
  '(nrepl-message-colors
    (quote
     ("#dc322f" "#cb4b16" "#b58900" "#546E00" "#B4C342" "#00629D" "#2aa198" "#d33682" "#6c71c4")))
- '(org-agenda-files (quote ("~/text/personal/life.org" "~/text/work/work.org")))
  '(package-selected-packages
    (quote
-    (flx counsel swiper yasnippet yari yaml-mode visual-regexp undo-tree solarized-theme smart-mode-line scss-mode sass-mode ruby-compilation robe rainbow-mode multiple-cursors move-dup magit intero highlight-symbol highlight-escape-sequences helm-projectile helm-ag guide-key git-timemachine git-gutter fullframe fill-column-indicator expand-region elfeed diminish css-eldoc company-statistics company-go coffee-mode browse-kill-ring anzu ace-jump-mode)))
+    (gist counsel-projectile flx counsel swiper yasnippet yari yaml-mode visual-regexp undo-tree solarized-theme smart-mode-line scss-mode sass-mode ruby-compilation robe rainbow-mode multiple-cursors move-dup magit intero highlight-symbol highlight-escape-sequences helm-projectile helm-ag guide-key git-timemachine git-gutter fullframe fill-column-indicator expand-region elfeed diminish css-eldoc company-statistics company-go coffee-mode browse-kill-ring anzu ace-jump-mode)))
  '(pos-tip-background-color "#eee8d5")
  '(pos-tip-foreground-color "#586e75")
  '(smartrep-mode-line-active-bg (solarized-color-blend "#859900" "#eee8d5" 0.2))
