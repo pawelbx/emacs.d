@@ -36,12 +36,10 @@
     (async-shell-command
      (concat "make -C " root-tile-dir " " deploy-type " TILE_NAME=" tile-to-deploy))))
 
-;; (defun deploy-apps ()
-;;   (interactive)
-;;   (async-shell-command
-;;    ()))
-
-;; (global-set-key (kbd "s-d") 'lfm-deploy)
+(defun load-template()
+  "load current story template"
+  (interactive)
+  (shell-command (concat "bundle exec rake story_templates:load[" (buffer-name) "]")))
 
 (defun build-dcr ()
   "build dcr and copies it to bi-api"
