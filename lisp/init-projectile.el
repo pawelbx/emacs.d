@@ -6,10 +6,6 @@
 
 (counsel-projectile-on)
 
-(setq projectile-mode-line
-      '(:eval (format " Projectile[%s(%s)]"
-                      (projectile-project-name))))
-
 (define-key projectile-mode-map (kbd "s-<f1>") 'counsel-projectile-switch-project)
 (define-key projectile-mode-map (kbd "s-<f2>") 'counsel-projectile-find-file)
 (define-key projectile-mode-map (kbd "s-<f3>") 'counsel-projectile-ag)
