@@ -3,8 +3,7 @@
 
 (projectile-global-mode t)
 (setq projectile-remember-window-configs t)
-
-(counsel-projectile-on)
+(counsel-projectile-mode)
 
 (define-key projectile-mode-map (kbd "s-<f1>") 'counsel-projectile-switch-project)
 (define-key projectile-mode-map (kbd "s-<f2>") 'counsel-projectile-find-file)
