@@ -1,5 +1,8 @@
 (require-package 'coffee-mode)
 (require-package 'js2-mode)
+(require-package 'prettier-js)
+
+(require 'prettier-js)
 
 (add-auto-mode 'js2-mode "\\.js\\'")
 

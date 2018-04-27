@@ -2,7 +2,7 @@
 (global-set-key (kbd "C-c o") 'org-capture)
 
 (setq org-agenda-file-regexp "\\`[^.].*\\.org\\'")
- (setq org-agenda-files (f-directories "~/text"))
+(setq org-agenda-files (f-directories "~/text"))
 (setq org-log-done 'time)
 (setq org-startup-indented 1)
 
