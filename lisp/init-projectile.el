@@ -7,7 +7,7 @@
 
 (define-key projectile-mode-map (kbd "s-<f1>") 'counsel-projectile-switch-project)
 (define-key projectile-mode-map (kbd "s-<f2>") 'counsel-projectile-find-file)
-(define-key projectile-mode-map (kbd "s-<f3>") 'counsel-projectile-ag)
+(define-key projectile-mode-map (kbd "s-<f3>") 'counsel-projectile-rg)
 (define-key projectile-mode-map (kbd "s-<f4>") 'counsel-projectile-find-dir)
 
 (provide 'init-projectile)
