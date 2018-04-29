@@ -30,7 +30,6 @@
 (require 'init-projectile)
 (require 'init-ruby)
 (require 'init-org)
-(require 'init-ag)
 (require 'init-javascript)
 (require 'init-haskell)
 (require 'init-go)
@@ -66,9 +65,6 @@
 (global-set-key (kbd "M-2") 'split-window-vertically) ; split pane top/bottom
 (global-set-key (kbd "M-3") 'split-window-horizontally) ; split pane top/bottom
 
-(global-set-key (kbd "C-s") 'isearch-forward-regexp)
-(global-set-key (kbd "C-M-s") 'isearch-forward)
-
 (defalias 'list-buffers 'ibuffer)
 
 (put 'dired-find-alternate-file 'disabled nil)
@@ -88,5 +84,9 @@
 (put 'upcase-region 'disabled nil)
 (put 'downcase-region 'disabled nil)
 (put 'narrow-to-region 'disabled nil)
+
+(require-package 'exec-path-from-shell)
+(when (memq window-system '(mac ns x))
+  (exec-path-from-shell-initialize))
 
 (provide 'init)
