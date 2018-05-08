@@ -39,12 +39,15 @@
 (defun load-template()
   "load current story template"
   (interactive)
+  (shell-command "bundle install")
   (shell-command (concat "bundle exec rake story_templates:load[" (buffer-name) "]")))
 
 (defun build-dcr ()
   "build dcr and copies it to bi-api"
   (interactive)
   (shell-command "(cd /home/pbokota/projects/dcr/bin/ && bundle exec export-data-points)")
-  (copy-file "/home/pbokota/projects/dcr/data-points.csv" "/home/pbokota/projects/lfm-bi-api/bi-api/data-points.csv" t))
+  (shell-command "(cd /home/pbokota/projects/dcr/bin/ && bundle exec export-src-attrs)")
+  (copy-file "/home/pbokota/projects/dcr/data-points.csv" "/home/pbokota/projects/lfm-bi-api/bi-api/data-points.csv" t)
+  (copy-file "/home/pbokota/projects/dcr/src-attr.csv" "/home/pbokota/projects/lfm-bi-api/bi-api/src-attr.csv" t))
 
 (provide 'custom-funcs)
