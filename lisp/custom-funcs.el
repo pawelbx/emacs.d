@@ -42,6 +42,30 @@
   (shell-command "bundle install")
   (shell-command (concat "bundle exec rake story_templates:load[" (buffer-name) "]")))
 
+;; (defun cache-restart()
+;;   "restart varnish cache"
+;;   (interactive)
+;;   (shell-command "ssh -t lfm@cache1.lfmdev.in sudo service varnish stop")
+;;   (shell-command "ssh -t lfm@cache1.lfmdev.in sudo service varnish start"))
+
+(defun camel-case(start end)
+  "turn region to camelCase"
+  (interactive "r")
+  (require 's)
+  (let ((region (buffer-substring-no-properties start end)))
+    (delete-region start end)
+    (insert
+     (s-lower-camel-case region))))
+
+(defun snake-case(start end)
+  "turn region to snake-case"
+  (interactive "r")
+  (require 's)
+  (let ((region (buffer-substring-no-properties start end)))
+    (delete-region start end)
+    (insert
+     (s-snake-case region))))
+
 (defun build-dcr ()
   "build dcr and copies it to bi-api"
   (interactive)
