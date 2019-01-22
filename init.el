@@ -38,6 +38,7 @@
 (require 'init-erc)
 (require 'init-web)
 (require 'init-hydra)
+(require 'init-pomidor)
 (require 'custom-funcs)
 
 (setq-default gc-cons-threshold 100000000
