@@ -77,6 +77,10 @@
 (require-package 'visual-regexp)
 (require 'visual-regexp)
 
+(require-package 'rainbow-delimiters)
+(require 'rainbow-delimiters)
+(add-hook 'prog-mode-hook 'rainbow-delimiters-mode)
+
 (setq custom-file (concat user-emacs-directory "customs.el"))
 (load custom-file)
 
