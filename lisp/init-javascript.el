@@ -12,5 +12,6 @@
 
 (setq js-indent-level 2)
 (setq js2-basic-offset 2)
+(setq coffee-tab-width 2)
 
 (provide 'init-javascript)
