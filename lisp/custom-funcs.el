@@ -26,7 +26,7 @@
   (interactive "p\n");;sWhich tile to deploy: ")
   (require 'f)
   (let* ((deploy-type (if (>= deploy-code 4) "deploy" "local-deploy"))
-         (root-tile-dir "/home/pbokota/projects/tiles/")
+         (root-tile-dir "~/projects/tiles/")
          (tile-name "")
          (tile-to-deploy (cond
                           ;;((not (equal tile-name "")) tile-name)

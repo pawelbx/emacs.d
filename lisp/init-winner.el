@@ -12,4 +12,7 @@
                         "*helm grep*"))
   (add-to-list 'winner-boring-buffers boring-buffer))
 
+(global-set-key (kbd "C-c b") 'winner-undo)
+(global-set-key (kbd "C-c n") 'winner-redo)
+
 (provide 'init-winner)
