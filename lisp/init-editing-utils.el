@@ -29,6 +29,8 @@
 (diminish 'undo-tree-mode)
 (require-package 'highlight-symbol)
 
+(setq-default c-basic-offset 2)
+
 (dolist (hook '(prog-mode-hook html-mode-hook css-mode-hook))
   (add-hook hook 'highlight-symbol-mode)
   (add-hook hook 'highlight-symbol-nav-mode)
