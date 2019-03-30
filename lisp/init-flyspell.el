@@ -20,6 +20,7 @@
                   perl-mode-hook
                   tcl-mode-hook
                   javascript-mode-hook
+                  js2-mode-hook
                   coffee-mode))
     (add-hook hook 'flyspell-prog-mode)))
 
