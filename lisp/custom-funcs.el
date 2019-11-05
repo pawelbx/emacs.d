@@ -69,9 +69,9 @@
 (defun build-dcr ()
   "build dcr and copies it to bi-api"
   (interactive)
-  (shell-command "(cd /home/pbokota/projects/dcr/bin/ && bundle exec export-data-points)")
-  (shell-command "(cd /home/pbokota/projects/dcr/bin/ && bundle exec export-src-attrs)")
-  (copy-file "/home/pbokota/projects/dcr/data-points.csv" "/home/pbokota/projects/lfm-bi-api/bi-api/data-points.csv" t)
-  (copy-file "/home/pbokota/projects/dcr/src-attr.csv" "/home/pbokota/projects/lfm-bi-api/bi-api/src-attr.csv" t))
+  (shell-command "(cd ~/projects/dcr/bin/ && bundle exec export-data-points)")
+  (shell-command "(cd ~/projects/dcr/bin/ && bundle exec export-src-attrs)")
+  (copy-file "~/projects/dcr/data-points.csv" "~/projects/lfm-bi-api/bi-api/data-points.csv" t)
+  (copy-file "~/projects/dcr/src-attr.csv" "~/projects/lfm-bi-api/bi-api/src-attr.csv" t))
 
 (provide 'custom-funcs)
