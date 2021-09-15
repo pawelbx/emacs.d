@@ -13,7 +13,7 @@
 
      (setq ivy-re-builders-alist
            '((swiper . ivy--regex-plus)
-             (counsel-ag . ivy--regex-plus)
+             (counsel-rg . ivy--regex-plus)
              (t . ivy--regex-fuzzy)))
 
      (global-set-key (kbd "C-s") 'swiper)
