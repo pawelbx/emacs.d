@@ -58,6 +58,10 @@
 (desktop-save-mode 1)
 (setq desktop-restore-eager 20)
 
+(elpy-enable)
+
+(setq-default ispell-program-name "aspell")
+
 (global-set-key (kbd "C-c c") 'ediff-regions-wordwise)
 (global-set-key (kbd "M-s") 'other-window)
 
