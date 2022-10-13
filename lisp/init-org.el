@@ -2,7 +2,7 @@
 (global-set-key (kbd "C-c o") 'org-capture)
 
 (setq org-agenda-file-regexp "\\`[^.].*\\.org\\'")
-(setq org-agenda-files (f-directories "~/text"))
+(setq org-agenda-files '("~/Dropbox/life/today.org" "~/Dropbox/work/today.org"))
 (setq org-log-done 'time)
 (setq org-startup-indented 1)
 
@@ -10,9 +10,7 @@
 (add-to-list 'org-modules 'org-habit)
 
 (setq org-capture-templates
-      '(("m" "entry for meditation journal" entry (file "~/text/personal/meditation/journal.org")
-         "\n* %u\n :PROPERTIES:\n :TIME: %? minutes\n :END:\n** Notes\n - ")
-        ("n" "daily work log" entry (file+datetree "~/Dropbox/work/daily-log.org")
+      '(("n" "daily work log" entry (file+datetree "~/Dropbox/work/daily-log.org")
          "* %U - %?")
         ("o" "daily life log" entry (file+datetree "~/Dropbox/life/daily-life.org.gpg")
          "* %U - %?")
