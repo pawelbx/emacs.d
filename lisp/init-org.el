@@ -33,4 +33,10 @@
    (emacs-lisp . t)
    (ruby . t)))
 
+(add-hook 'after-save-hook
+          (lambda ()
+            (when (string-match-p "/Dropbox/life/today.org" (buffer-file-name))
+              (print "Exporting calendar")
+              (async-shell-command "emacs --script ~/projects/scripts/export-org-calendar.el"))))
+
 (provide 'init-org)

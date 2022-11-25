@@ -16,7 +16,6 @@
 (global-set-key (kbd "M-C-9") (lambda () (interactive) (sanityinc/adjust-opacity nil 2)))
 (global-set-key (kbd "M-C-0") (lambda () (interactive) (modify-frame-parameters nil `((alpha . 100)))))
 
-
 (setq frame-title-format
       '((:eval (if (buffer-file-name)
                    (abbreviate-file-name (buffer-file-name))
@@ -24,4 +23,8 @@
 
 (setq display-time-day-and-date t)
 (display-time)
+
+(add-to-list 'display-buffer-alist
+  (cons "\\*Async Shell Command\\*.*" (cons #'display-buffer-no-window nil)))
+
 (provide 'init-gui-frames)

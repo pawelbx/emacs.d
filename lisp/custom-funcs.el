@@ -11,7 +11,7 @@
         (forward-line 1))))
 
 (defun count-matches-each (regex-str)
-  "Detects dups"
+  "Detects dups."
   (interactive)
   (save-excursion
     (goto-char (point-min))
