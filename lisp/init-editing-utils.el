@@ -89,10 +89,7 @@
         (turn-on-fci-mode)))))
 
 (require-package 'move-dup)
-(global-set-key [M-up] 'md/move-lines-up)
-(global-set-key [M-down] 'md/move-lines-down)
-(global-set-key [M-S-up] 'md/move-lines-up)
-(global-set-key [M-S-down] 'md/move-lines-down)
+(global-move-dup-mode)
 
 (require-package 'highlight-escape-sequences)
 (hes-mode)
