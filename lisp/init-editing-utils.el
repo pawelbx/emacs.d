@@ -90,6 +90,7 @@
 
 (require-package 'move-dup)
 (global-move-dup-mode)
+(diminish 'move-dup-mode)
 
 (require-package 'highlight-escape-sequences)
 (hes-mode)
@@ -100,7 +101,6 @@
                                      "C-x n" "C-c p" "C-c z"))
 (guide-key-mode 1)
 (diminish 'guide-key-mode)
-
 
 (defun find-file-sudo ()
   "Reopen the current file as root, preserving point position."

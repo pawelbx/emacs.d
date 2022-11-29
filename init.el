@@ -58,10 +58,7 @@
 (desktop-save-mode 1)
 (setq desktop-restore-eager 20)
 
-(elpy-enable)
-
 (setq-default ispell-program-name "aspell")
-
 (global-set-key (kbd "C-c c") 'ediff-regions-wordwise)
 (global-set-key (kbd "M-s") 'other-window)
 
@@ -71,7 +68,6 @@
 (global-set-key (kbd "M-3") 'split-window-horizontally) ; split pane top/bottom
 
 (defalias 'list-buffers 'ibuffer)
-
 (put 'dired-find-alternate-file 'disabled nil)
 
 (require-package 'yasnippet)
@@ -96,6 +92,9 @@
 
 (require-package 'exec-path-from-shell)
 (when (memq window-system '(mac ns x))
+  (exec-path-from-shell-initialize))
+
+(when (daemonp)
   (exec-path-from-shell-initialize))
 
 (provide 'init)
