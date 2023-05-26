@@ -67,6 +67,13 @@
 (global-set-key (kbd "M-2") 'split-window-vertically) ; split pane top/bottom
 (global-set-key (kbd "M-3") 'split-window-horizontally) ; split pane top/bottom
 
+(when (string-equal system-type "darwin") ; Mac OS X
+  (setq mac-option-key-is-meta nil)
+  (setq mac-command-key-is-meta t)
+  (setq mac-command-modifier 'meta)
+  (setq mac-option-modifier 'super)
+  (setq mac-right-option-modifier 'none))
+
 (defalias 'list-buffers 'ibuffer)
 (put 'dired-find-alternate-file 'disabled nil)
 
