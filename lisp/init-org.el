@@ -39,4 +39,6 @@
               (print "Exporting calendar")
               (async-shell-command "emacs --script ~/projects/scripts/export-org-calendar.el"))))
 
+(require 'org-tempo)
+
 (provide 'init-org)
