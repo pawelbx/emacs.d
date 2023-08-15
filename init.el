@@ -39,6 +39,7 @@
 (require 'init-web)
 (require 'init-hydra)
 (require 'init-pomidor)
+(require 'init-emms)
 (require 'custom-funcs)
 
 (setq-default gc-cons-threshold 100000000
