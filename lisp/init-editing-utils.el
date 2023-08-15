@@ -1,8 +1,9 @@
 (when (fboundp 'electric-pair-mode)
   (electric-pair-mode))
 
-(when (fboundp 'global-prettify-symbols-mode)
-  (global-prettify-symbols-mode))
+; disables because it's slow
+;; (when (fboundp 'global-prettify-symbols-mode)
+;;   (global-prettify-symbols-mode))
 
 (setq-default
  blink-cursor-interval 0.4
