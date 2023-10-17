@@ -56,6 +56,10 @@
 ;(set-face-background 'hl-line "#302942")
 (fset 'yes-or-no-p 'y-or-n-p)
 
+(set-face-attribute 'default nil
+                    :family "JetBrains Mono"
+                    :height 120)
+
 (desktop-save-mode 1)
 (setq desktop-restore-eager 20)
 
