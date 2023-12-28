@@ -1,6 +1,6 @@
 (setq inhibit-startup-screen t)
 (toggle-indicate-empty-lines)
-(message "GUIEmpty lines1: %s" indicate-empty-lines)
+(message "GUIEmpty lines: %s" indicate-empty-lines)
 (when (fboundp 'tool-bar-mode)
   (tool-bar-mode -1))
 (when (fboundp 'set-scroll-bar-mode)

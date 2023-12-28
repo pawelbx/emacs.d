@@ -1,4 +1,5 @@
 (require-package 'counsel)
+(setq ivy-initial-inputs-alist nil)
 (require-package 'flx)
 (eval-after-load 'counsel
   '(progn

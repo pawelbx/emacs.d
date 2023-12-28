@@ -15,13 +15,18 @@ This command switches to browser."
 
 (global-set-key (kbd "<f8>") 'word-def-lookup)
 
-(let* ((backup-dir (expand-file-name "~/.backups")))
+;backups and undo tree
+(let* ((backup-dir (expand-file-name "~/.backups"))
+       (undotree-dir (expand-file-name "undo-tree" backup-dir)))
   (unless (file-exists-p backup-dir) (make-directory backup-dir))
+  (unless (file-exists-p undotree-dir) (make-directory undotree-dir))
+  (setq undo-tree-history-directory-alist `(("." . ,undotree-dir)))
   (setq backup-by-copying t ; don't clobber symlinks
         backup-directory-alist (list (cons "." backup-dir))
         delete-old-versions t
         version-control t  ;use versioned backups
         kept-new-versions 8
-        kept-old-versions 4))
+        kept-old-versions 4)
+  )
 
 (provide 'init-other)
