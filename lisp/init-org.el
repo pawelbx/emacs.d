@@ -6,6 +6,8 @@
 (setq org-log-done 'time)
 (setq org-startup-indented 1)
 
+(setq org-log-into-drawer t)
+
 (require 'org-habit)
 (add-to-list 'org-modules 'org-habit)
 
