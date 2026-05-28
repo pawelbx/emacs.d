@@ -1,18 +1,20 @@
-;;; Colourise CSS colour literals
-(when (maybe-require-package 'rainbow-mode)
-  (dolist (hook '(css-mode-hook html-mode-hook sass-mode-hook))
-    (add-hook hook 'rainbow-mode)))
+(use-package rainbow-mode
+  :ensure t
+  :hook (css-ts-mode-hook
+         html-mode-hook
+         sass-mode-hook))
 
-;;; SASS and SCSS
-(require-package 'sass-mode)
-(require-package 'scss-mode)
-(setq-default scss-compile-at-save nil)
+(use-package css-mode
+  :ensure nil
+  :mode ("\\.css\\'" . css-ts-mode)
+  :mode ("\\.scss\\'" . css-ts-mode)
+  :hook ((css-ts-mode . eglot-ensure)
+         (css-ts-mode . subword-mode))
+  :config
+  (setq css-indent-offset 2))
 
-;;; Use eldoc for syntax hints
-(require-package 'css-eldoc)
-(autoload 'turn-on-css-eldoc "css-eldoc")
-(add-hook 'css-mode-hook 'turn-on-css-eldoc)
-
-(setq css-indent-offset 2)
+(use-package sass-mode
+  :ensure t
+  :mode "\\.sass\\'")
 
 (provide 'init-css)

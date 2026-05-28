@@ -1,51 +1,59 @@
-;;; Basic ruby setup
-(require-package 'ruby-mode)
+(use-package ruby-ts-mode
+  :ensure nil ; Built-in to Emacs 29+
+  :mode (("\\.rb\\'"       . ruby-ts-mode)
+         ("Rakefile\\'"    . ruby-ts-mode)
+         ("\\.rake\\'"     . ruby-ts-mode)
+         ("Gemfile\\'"     . ruby-ts-mode)
+         ("\\.gemspec\\'"  . ruby-ts-mode)
+         ("\\.ru\\'"       . ruby-ts-mode)
+         ("Kirkfile\\'"    . ruby-ts-mode))
+  :init
+  ;; Remap classic ruby-mode to tree-sitter version globally
+  (add-to-list 'major-mode-remap-alist '(ruby-mode . ruby-ts-mode))
+  :hook ((ruby-ts-mode . subword-mode)
+         ;; (ruby-ts-mode . robe-mode)
+         (ruby-ts-mode . eglot-ensure))
+  :bind (:map ruby-ts-mode-map
+         ("TAB" . indent-for-tab-command)
+         ([f6]  . recompile)
+         ([f7]  . ruby-compilation-this-test)
+         ([S-f7] . ruby-compilation-this-buffer))
+  :config
+  (setq ruby-ts-highlight-level 4) ; Maximum syntax color detail
 
-(add-auto-mode 'ruby-mode
-               "Rakefile\\'" "\\.rake\\'" "\\.rxml\\'"
-               "\\.rjs\\'" "\\.irbrc\\'" "\\.pryrc\\'" "\\.builder\\'" "\\.ru\\'"
-               "\\.gemspec\\'" "Gemfile\\'" "Kirkfile\\'")
+  (with-eval-after-load 'eglot
+    (add-to-list 'eglot-server-programs
+                 '((ruby-mode ruby-ts-mode) . ("ruby-lsp"))))
 
-(setq ruby-use-encoding-map nil)
+  ;; Unified Environment/Path Setup
+  (let ((rbenv-shims (expand-file-name "~/.rbenv/shims"))
+        (rbenv-bin   (expand-file-name "~/.rbenv/bin")))
+    (setenv "PATH" (concat rbenv-shims ":" rbenv-bin ":" (getenv "PATH")))
+    (add-to-list 'exec-path rbenv-shims)
+    (add-to-list 'exec-path rbenv-bin)))
 
-(after-load 'ruby-mode
-  (define-key ruby-mode-map (kbd "TAB") 'indent-for-tab-command)
+;; (use-package robe
+;;   :ensure t
+;;   :defer t
+;;   :config
+;;   ;; Integration: Tell Robe to use inf-ruby
+;;   (add-hook 'robe-mode-hook 'robe-start))
 
-  ;; Stupidly the non-bundled ruby-mode isn't a derived mode of
-  ;; prog-mode: we run the latter's hooks anyway in that case.
-  (add-hook 'ruby-mode-hook
-            (lambda ()
-              (unless (derived-mode-p 'prog-mode)
-                (run-hooks 'prog-mode-hook)))))
+(use-package inf-ruby
+  :ensure t
+  :defer t)
 
-(add-hook 'ruby-mode-hook 'subword-mode)
+(use-package ruby-compilation
+  :ensure t
+  :defer t)
 
-;;; Inferior ruby
-(require-package 'inf-ruby)
+(use-package yari
+  :ensure t
+  :bind (("C-c r i" . yari))
+  :init (defalias 'ri 'yari))
 
-;;; Ruby compilation
-(require-package 'ruby-compilation)
-
-(after-load 'ruby-mode
-  (let ((m ruby-mode-map))
-    (define-key m [S-f7] 'ruby-compilation-this-buffer)
-    (define-key m [f7] 'ruby-compilation-this-test)
-    (define-key m [f6] 'recompile)))
-
-;;; Robe
-(require-package 'robe)
-(after-load 'ruby-mode
-  (add-hook 'ruby-mode-hook 'robe-mode))
-
-;;; ri support
-(require-package 'yari)
-(defalias 'ri 'yari)
-
-;;; YAML
-(require-package 'yaml-mode)
-
-;;; rbenv
-(setenv "PATH" (concat (getenv "HOME") "/.rbenv/shims:" (getenv "HOME") "/.rbenv/bin:" (getenv "PATH")))
-(setq exec-path (cons (concat (getenv "HOME") "/.rbenv/shims") (cons (concat (getenv "HOME") "/.rbenv/bin") exec-path)))
+(use-package yaml-ts-mode
+  :ensure nil
+  :mode "\\.ya?ml\\'")
 
 (provide 'init-ruby)

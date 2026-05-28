@@ -1,15 +1,22 @@
-(require-package 'magit)
-;(require-package 'git-gutter)
-(require-package 'git-timemachine)
+(use-package transient :elpaca t)
+(use-package magit
+  :elpaca (magit :repo "https://github.com/magit/magit.git"
+                 :ref "v4.5.0")
+  :after (transient)
+  :bind ("C-c s" . magit-status)
+  :config)
 
-;(global-git-gutter-mode t)
-;(git-gutter:linum-setup)
+(use-package git-timemachine
+  :ensure t
+  :bind ("C-c t" . git-timemachine))
 
-;(global-set-key (kbd "C-x C-g") 'git-gutter:toggle)
-(global-set-key (kbd "C-c s") 'magit-status)
-
-;magit-status will take all space in frame
-(fullframe projectile-vc magit-mode-quit-window)
-(fullframe magit-status magit-mode-quit-window)
+(use-package diff-hl
+  :ensure t
+  :hook ((magit-pre-refresh  . diff-hl-magit-pre-refresh)
+         (magit-post-refresh . diff-hl-magit-post-refresh))
+  :init
+  (global-diff-hl-mode)
+  :config
+  (diff-hl-flydiff-mode))
 
 (provide 'init-git)

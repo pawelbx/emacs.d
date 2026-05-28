@@ -1,25 +1,32 @@
-(require-package 'company)
-
-(require-package 'company-statistics)
-
-(add-hook 'prog-mode-hook 'global-company-mode)
-
-(eval-after-load 'company
-  '(progn
-     (company-statistics-mode)
-     (setq company-statistics-size 40000)
-     ;; can't work with TRAMP
-     (setq company-backends (delete 'company-ropemacs company-backends))
-     ;; I don't like the downcase word in company-dabbrev
-     ;; for languages use camel case naming convention
-     (setq company-dabbrev-downcase nil)
-     (setq company-show-numbers t)
-     (setq company-begin-commands '(self-insert-command))
-     (setq company-idle-delay 0.2)
-     (setq company-clang-insert-arguments nil)
-
-     (setq company-global-modes
-           '(not
-             eshell-mode comint-mode erc-mode gud-mode rcirc-mode haskell-mode))))
+(use-package company
+  :ensure t
+  :init
+  (global-company-mode 1)
+  :custom
+  (company-minimum-prefix-length 1)
+  (company-idle-delay 0.2)
+  (company-tooltip-align-annotations t)
+  (company-show-numbers t)
+  (company-dabbrev-downcase nil)
+  (company-global-modes '(not
+                          eshell-mode
+                          comint-mode
+                          erc-mode
+                          gud-mode
+                          rcirc-mode
+                          haskell-mode
+                          message-mode
+                          git-commit-mode
+                          magit-log-edit-mode))
+  :config
+  (use-package company-statistics
+    :ensure t
+    :config
+    (setq company-statistics-size 40000)
+    (company-statistics-mode 1))
+  (setq company-backends '((company-capf :with company-yasnippet)
+                           (company-dabbrev-code company-keywords)
+                           company-files
+                           company-dabbrev)))
 
 (provide 'init-company)

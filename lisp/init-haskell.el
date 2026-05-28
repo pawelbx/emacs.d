@@ -1,10 +1,8 @@
-(require-package 'haskell-mode)
-;(require-package 'intero)
+(use-package haskell-mode
+  :ensure t
+  :mode "\\.hs\\'"
+  :hook (haskell-mode . eglot-ensure))
 
-(require 'haskell-mode)
-;(require 'intero)
-
-;(after-load "haskell-mode"
-;  (add-hook 'haskell-mode-hook 'intero-mode))
-
-(provide 'init-haskell)
+(use-package haskell-ts-mode
+  :ensure t
+  :mode "\\.hs\\'")

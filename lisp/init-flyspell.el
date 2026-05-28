@@ -1,32 +1,11 @@
-;;----------------------------------------------------------------------------
-;; Add spell-checking in comments for all programming language modes
-;;----------------------------------------------------------------------------
-(if (fboundp 'prog-mode)
-    (add-hook 'prog-mode-hook 'flyspell-prog-mode)
-  (dolist (hook '(lisp-mode-hook
-                  emacs-lisp-mode-hook
-                  scheme-mode-hook
-                  clojure-mode-hook
-                  ruby-mode-hook
-                  yaml-mode
-                  python-mode-hook
-                  shell-mode-hook
-                  php-mode-hook
-                  css-mode-hook
-                  haskell-mode-hook
-                  caml-mode-hook
-                  nxml-mode-hook
-                  crontab-mode-hook
-                  perl-mode-hook
-                  tcl-mode-hook
-                  javascript-mode-hook
-                  js2-mode-hook
-                  coffee-mode))
-    (add-hook hook 'flyspell-prog-mode)))
-
-(after-load 'flyspell
-  (add-to-list 'flyspell-prog-text-faces 'nxml-text-face))
-
-(add-hook 'org-mode-hook 'turn-on-flyspell)
+(use-package flyspell
+  :ensure nil
+  :hook ((prog-mode . flyspell-prog-mode)
+         (org-mode . flyspell-mode)
+         (git-commit-mode . flyspell-mode))
+  :config
+  (add-to-list 'flyspell-prog-text-faces 'nxml-text-face)
+  (setq flyspell-issue-message-flag nil)
+  (setq flyspell-issue-welcome-message nil))
 
 (provide 'init-flyspell)

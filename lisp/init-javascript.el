@@ -1,21 +1,21 @@
-(require-package 'coffee-mode)
-(require-package 'rjsx-mode)
-(require-package 'js2-mode)
-(require-package 'prettier-js)
-(require-package 'typescript-mode)
+(use-package typescript-ts-mode
+  :ensure nil
+  :mode (("\\.ts\\'" . typescript-ts-mode)
+         ("\\.tsx\\'" . tsx-ts-mode))
+  :hook (typescript-ts-mode . subword-mode)
+  :config
+  (setq typescript-ts-mode-indent-offset 2))
 
-(require 'prettier-js)
+(use-package js
+  :ensure nil
+  :mode ("\\.js\\'" . js-ts-mode)
+  :hook (js-ts-mode . subword-mode)
+  :config
+  (setq js-indent-level 2))
 
-(add-auto-mode 'rjsx-mode "\\.js\\'")
-(add-auto-mode 'typescript-mode "\\.tsx\\'")
-
-(add-hook 'typescript-mode-hook 'subword-mode)
-(add-hook 'coffee-mode-hook 'subword-mode)
-(add-hook 'js2-mode-hook 'subword-mode)
-(add-hook 'js2-mode-hook 'prettier-js-mode)
-
-(setq js-indent-level 2)
-(setq js2-basic-offset 2)
-(setq coffee-tab-width 2)
+;; (use-package apheleia
+;;   :ensure t
+;;   :config
+;;   (apheleia-global-mode +1))
 
 (provide 'init-javascript)

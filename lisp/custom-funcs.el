@@ -74,4 +74,29 @@
   (copy-file "~/projects/dcr/data-points.csv" "~/projects/lfm-bi-api/bi-api/data-points.csv" t)
   (copy-file "~/projects/dcr/src-attr.csv" "~/projects/lfm-bi-api/bi-api/src-attr.csv" t))
 
+(defun add-rbenv()
+  "add variable to rbenv file"
+  (interactive)
+  (shell-command "aws --profile=sso-lfmdev s3 cp s3://conf.dev.lfm/lfm-accounts/.rbenv-vars /tmp/accounts-rbenv")
+  (shell-command "echo DSP_API_HOST=dsp-api.lfmdev.in >> /tmp/accounts-rbenv")
+  (find-file "/tmp/accounts-rbenv"))
+
+;; (defun write-and-execute-file-test-lf ()
+;;   "Interactive function to write to a file, execute a shell command, and delete the file."
+;;   (interactive))
+
+;; (defun edit-file-and-execute-lf ()
+;;   "Open a file, let the user edit it, and execute code upon save."
+;;   (interactive)
+;;   (let ((file (read-file-name "Enter file name: ")))
+;;     (find-file file)
+;;     (add-hook 'after-save-hook #'my-execution-function-lf nil 'local)))
+
+;; (defun my-execution-function-lf ()
+;;   "Execute code after the file is saved."
+;;   (remove-hook 'after-save-hook #'my-execution-function-lf 'local)
+;;   ;; Insert your code to be executed here
+;;   (message "Code executed successfully!"))
+
+
 (provide 'custom-funcs)

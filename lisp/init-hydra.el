@@ -1,21 +1,21 @@
-(require-package 'hydra)
+(use-package hydra
+  :ensure t
+  :config
+  ;; 1. The "Window Resizer" - Use C-c w to start
+  (defhydra hydra-window (:color red :hint nil)
+    ("h" shrink-window-horizontally)
+    ("l" enlarge-window-horizontally)
+    ("k" enlarge-window)
+    ("j" shrink-window)
+    ("v" split-window-right)
+    ("s" split-window-below)
+    ("x" delete-window)
+    ("o" delete-other-windows)
+    ("u" winner-undo)
+    ("b" balance-windows)
+    ("f" delete-other-windows :color blue)
+    ("q" nil :color blue))
 
-(eval-after-load 'hydra
-  '(progn
-     (global-set-key
-      (kbd "C-n")
-      (defhydra hydra-move
-        (:body-pre (next-line))
-        "move"
-        ("n" next-line)
-        ("p" previous-line)
-        ("f" forward-char)
-        ("b" backward-char)
-        ("a" beginning-of-line)
-        ("e" move-end-of-line)
-        ("v" scroll-up-command)
-        ;; Converting M-v to V here by analogy.
-        ("V" scroll-down-command)
-        ("l" recenter-top-bottom)))))
+  (global-set-key (kbd "C-c w") 'hydra-window/body))
 
 (provide 'init-hydra)
